@@ -14,6 +14,14 @@ class Form extends Component {
         this.state = this.initialState;
     }
 
+    inputListener = event => {
+        const { name, value } = event.target;
+
+        this.setState({
+            [name]: value
+        })
+    }
+
     render() {
 
         const {nome, livro, preco} = this.state;
@@ -24,8 +32,9 @@ class Form extends Component {
                 <input
                     id="nome"
                     type="text"
-                    name="name"
+                    name="nome"
                     value={nome}
+                    onChange = {this.inputListener}
                 />
 
                 <label htmlFor="livro">Livro</label>
@@ -34,6 +43,7 @@ class Form extends Component {
                     type="text"
                     name="livro"
                     value={livro}
+                    onChange = {this.inputListener}
                 />
 
                 <label htmlFor="preco">Preço</label>
@@ -42,6 +52,7 @@ class Form extends Component {
                     type="text"
                     name="preco"
                     value={preco}
+                    onChange = {this.inputListener}
                 />
 
                 <button>Salvar</button>
