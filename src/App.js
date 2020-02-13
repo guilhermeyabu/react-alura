@@ -1,39 +1,34 @@
 import React from 'react';
 import './App.css';
+import Tabela from './Tabela';
 
 function App() {
+  const autores = [
+    {
+      nome: 'Paulo',
+      livro: 'React',
+      preco: 'R$1000'
+    },
+    {
+      nome: 'Yabu',
+      livro: 'Android',
+      preco: 'R$100'
+    },
+    {
+      nome: 'Gabi',
+      livro: 'Java',
+      preco: 'R$150'
+    },
+    {
+      nome: 'Xablau',
+      livro: 'Burgão',
+      preco: 'R$10'
+    }
+  ];
+
   return (
     <div className="App">
-      <table>
-        <thead>
-          <tr>
-            <th>Autores</th>
-            <th>Livros</th>
-            <th>Preços</th>
-            <th>Remover</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Paulo</td>
-            <td>React</td>
-            <td>R$1000</td>
-            <td><button>Remover</button></td>
-          </tr>
-          <tr>
-            <td>Yabu</td>
-            <td>React</td>
-            <td>R$1000</td>
-            <td><button>Remover</button></td>
-          </tr>
-          <tr>
-            <td>Gabi</td>
-            <td>React</td>
-            <td>R$1000</td>
-            <td><button>Remover</button></td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabela autores={autores} />
     </div>
   );
 }
