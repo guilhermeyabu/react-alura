@@ -22,6 +22,11 @@ class Form extends Component {
         })
     }
 
+    criarNovoAutor = () => {
+        this.props.addAutor(this.state);
+        this.setState(this.initialState)
+    }
+
     render() {
 
         const {nome, livro, preco} = this.state;
@@ -55,7 +60,7 @@ class Form extends Component {
                     onChange = {this.inputListener}
                 />
 
-                <button>Salvar</button>
+                <button onClick={this.criarNovoAutor} type="button">Salvar</button>
             </form>
         );
     }

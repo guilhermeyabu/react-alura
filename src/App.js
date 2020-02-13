@@ -46,11 +46,17 @@ class App extends Component {
     );
   }
 
+  addAutor = autor => {
+    this.setState({
+      autores: [...this.state.autores, autor]
+    })
+  }
+
   render() {
     return (
       <Fragment>
         <Tabela autores={this.state.autores} removerAutor={this.removerAutor} />
-        <Form />
+        <Form addAutor={this.addAutor} />
       </Fragment>
     );
   }
